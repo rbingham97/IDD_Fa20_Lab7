@@ -54,19 +54,19 @@ The Arduino sends one message every time the button state changes. To make this 
 
 ### Run the HelloYou server on the RPi
 
-**Look at the code. What interface does the Pi use to communicate with the Arduino when the code is running?
+**Look at the code. What interface does the Pi use to communicate with the Arduino when the code is running?**
 
 The server code uses SocketIO to manage the messages that move back and forth between server.py and client.js. The server.py code communicates with the Arduino over serial. 
 
-**What messages are sent from the Pi to the Arduino? 
+**What messages are sent from the Pi to the Arduino?**
 
 The Pi sends either a 'H' or an 'L', based on whether a button is pressed on the website. 
 
-**What part of the code controls what is served when a browser requests a page from the server?
+**What part of the code controls what is served when a browser requests a page from the server?**
 
 The index.html file is the first file queried by the browser -- this file then calls all the other files.
 
-**What messages are sent to the console? When?
+**What messages are sent to the console? When?**
 
 Messages from the Arduino are printed to terminal, as are messages from the Pi. 
 
