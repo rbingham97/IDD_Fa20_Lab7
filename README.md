@@ -35,19 +35,19 @@ HelloYou has 3 parts:
 
 ### Flash the HelloYou Sketch onto the Arduino
 
-**What messages are sent from the Arduino to the Pi? **
+**What messages are sent from the Arduino to the Pi?**
 
 As noted earlier, the Arduino sends "light" when the button is pressed, then "dark" when it is released.
 
-**What messages are expected from the Pi to the Arduino? **
+**What messages are expected from the Pi to the Arduino?**
 
 In static/client.js, we see the messages sent and expected by the SocketIO framework. The server expects "light" and "dark" messages, just like the sketch sends. These messages turn the website background white and black respectively. The server also contains the JS functions that get called when a button is pressed, and these functions send tags to the python file that cause it to run its own functions that send either "H" or "L" to the Arduino. 
 
-**What happens if the Pi sends an unexpected message to the Arduino? **
+**What happens if the Pi sends an unexpected message to the Arduino?**
 
 If the message is anything other than specifically the char 'H', the Arduino treats it the same regardless (the real message meant for this block is the char 'L'). Any other message results in the LED staying off. 
 
-**How fast does the Arduino communicate with the Pi? What would you change to make it send messages less often? **
+**How fast does the Arduino communicate with the Pi? What would you change to make it send messages less often?**
 
 The Arduino sends one message every time the button state changes. To make this happen less often, we would add a counter or extra variable that measures when we actually want to send another message. 
 
